@@ -75,6 +75,17 @@ Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 *   **Lỗi 11:** Dòng 40 — Xuất hiện thẻ `<main>` thứ hai trong một trang — **Cách sửa:** Đổi thành thẻ `<aside>`
 *   **Lỗi 12:** Dòng 45 — Thẻ đoạn văn `<p>` chưa được đóng — **Cách sửa:** Bổ sung thẻ đóng `</p>`
 
+### Câu B4
+
+#### 1 chụp screenshot tab Elements trang tiki.vn
+
+- 3 thẻ semantic HTML5 trang đang sử dụng:
+  - Thẻ `<header>`: Bao quanh logo + thanh tìm kiếm
+    ![alt text](/PBT_01/screenshots/anhheader.png)
+  - Thẻ `<main>`: Bao toàn bộ nội dung chính trang
+    ![alt text](/PBT_01/screenshots/main.png)
+  - Thẻ `<footer>`: Chân trang
+   ![alt text](/PBT_01/screenshots/footer.png)
 
 
 
@@ -164,12 +175,12 @@ Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 
 ### Bài C2:
 
-####   Quan điểm "chỉ cần dùng <div> và class" là một tư duy sai lầm trong lập trình web hiện đại vì hai lý do kỹ thuật cốt lõi:
+####   Quan điểm "chỉ cần dùng `<div>` và class" là một tư duy sai lầm trong lập trình web hiện đại vì hai lý do kỹ thuật cốt lõi:
 
-*   **SEO (Tối ưu tìm kiếm):** Các công cụ tìm kiếm như Google dựa vào thẻ HTML để hiểu cấu trúc trang. Khi m dùng <main>, <article> hay <header>, m đang giúp Google Bot nhận diện đâu là nội dung quan trọng nhất. Một trang web toàn thẻ <div> sẽ khiến nội dung bị coi là thiếu cấu trúc, từ đó làm tụt thứ hạng tìm kiếm của trang.
+*   **SEO (Tối ưu tìm kiếm):** Các công cụ tìm kiếm như Google dựa vào thẻ HTML để hiểu cấu trúc trang. Khi m dùng `<main>`, `<article>` hay `<header>`, m đang giúp Google Bot nhận diện đâu là nội dung quan trọng nhất. Một trang web toàn thẻ `<div>` sẽ khiến nội dung bị coi là thiếu cấu trúc, từ đó làm tụt thứ hạng tìm kiếm của trang.
 
-*   **Accessibility (Khả năng truy cập):** Đây là yếu tố nhân văn giúp người khiếm thị sử dụng Screen Reader để lướt web. Screen Reader dựa vào các thẻ như <nav>, <button> để định vị các "cột mốc" trên trang. Nếu m chỉ dùng <div>, người dùng sẽ hoàn toàn bị lạc lối vì không xác định được các khu vực chức năng.
+*   **Accessibility (Khả năng truy cập):** Đây là yếu tố nhân văn giúp người khiếm thị sử dụng Screen Reader để lướt web. Screen Reader dựa vào các thẻ như `<nav>`, `<button>` để định vị các "cột mốc" trên trang. Nếu m chỉ dùng `<div>`, người dùng sẽ hoàn toàn bị lạc lối vì không xác định được các khu vực chức năng.
 
-*   **Ví dụ thực tế:** Thẻ <button> chuẩn mặc định đã hỗ trợ tương tác bằng bàn phím (phím Enter/Space) và có trạng thái "focus". Nếu dùng <div class="btn">, m sẽ phải viết thêm rất nhiều dòng JavaScript chỉ để giả lập lại những tính năng cơ bản mà lẽ ra một thẻ Semantic đã có sẵn từ đầu.
+*   **Ví dụ thực tế:** Thẻ `<button>` chuẩn mặc định đã hỗ trợ tương tác bằng bàn phím (phím Enter/Space) và có trạng thái "focus". Nếu dùng `<div class="btn">`, m sẽ phải viết thêm rất nhiều dòng JavaScript chỉ để giả lập lại những tính năng cơ bản mà lẽ ra một thẻ Semantic đã có sẵn từ đầu.
 
-*   **Trường hợp <div> vẫn phù hợp:** Thẻ <div> nên được dùng đúng chức năng là một cái "hộp" trung lập để bao bọc và căn chỉnh giao diện (như dùng Flexbox hoặc Grid) khi khối đó không mang ý nghĩa nội dung cụ thể nào cần định nghĩa cho trình duyệt.
+*   **Trường hợp `<div>` vẫn phù hợp:** Thẻ `<div>` nên được dùng đúng chức năng là một cái "hộp" trung lập để bao bọc và căn chỉnh giao diện (như dùng Flexbox hoặc Grid) khi khối đó không mang ý nghĩa nội dung cụ thể nào cần định nghĩa cho trình duyệt.
