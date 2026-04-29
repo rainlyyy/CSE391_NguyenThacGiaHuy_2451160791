@@ -1,7 +1,8 @@
 ## PHẦN A: KIẾN THỨC CƠ BẢN VỀ TRÌNH DUYỆT VÀ HTML5
 
 ### Câu A1: Quy trình tải trang web và Tab Network
-> tài liệu tham chiếu: `tuan_1_html5/01_introduction_html_universe.md`<
+> tài liệu tham chiếu: `tuan_1_html5/01_introduction_html_universe.md`
+
 Khi truy cập một trang web (ví dụ: `https://shopee.vn`), trình duyệt thực hiện theo thứ tự 7 bước sau:
 1.  **DNS lookup**: Tìm địa chỉ IP của tên miền.
 2.  **TCP handshake**: Thiết lập kết nối giữa máy tính và server.
@@ -17,7 +18,8 @@ Khi truy cập một trang web (ví dụ: `https://shopee.vn`), trình duyệt t
 ---
 
 ### Câu A2: Tối ưu SEO bằng Semantic HTML
-> tài liệu tham chiếu: `tuan_1_html5/04_semantic_html.md`<
+> tài liệu tham chiếu: `tuan_1_html5/04_semantic_html.md`
+
 Việc không sử dụng thẻ Semantic khiến Google đánh giá SEO thấp vì bot khó hiểu được cấu trúc trang. Dưới đây là 4 lỗi phổ biến và cách sửa:
 
 | Lỗi sai (Sử dụng thẻ Div) | Fix lỗi (Sử dụng thẻ Semantic) | Ý nghĩa việc sửa đổi |
@@ -30,7 +32,8 @@ Việc không sử dụng thẻ Semantic khiến Google đánh giá SEO thấp v
 ---
 
 ### Câu A3: Phân biệt Block Element và Inline Element
-> tài liệu tham chiếu: ` `<
+> tài liệu tham chiếu: ` `
+
 Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 
 *   **`<div>` (Block element)**: Luôn bắt đầu trên một dòng mới và chiếm toàn bộ chiều rộng có sẵn. Các phần tử khác không thể nằm cùng dòng với nó.
@@ -40,7 +43,8 @@ Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 ---
 
 ### Câu A4: Cấu trúc Table và lý do không dùng Table để dàn trang (Layout)
-> tài liệu tham chiếu: `tuan_1_html5/05_tables_hyperlinks.md`<
+> tài liệu tham chiếu: `tuan_1_html5/05_tables_hyperlinks.md`
+
 #### 1. Các thẻ thành phần trong Table
 *   **`<thead>`**: Chứa hàng tiêu đề cột, giúp xác định ý nghĩa từng cột.
 *   **`<tbody>`**: Chứa dữ liệu chính của bảng (có thể có nhiều thẻ `<tbody>`).
