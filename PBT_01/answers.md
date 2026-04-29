@@ -12,7 +12,7 @@ Khi truy cập một trang web (ví dụ: `https://shopee.vn`), trình duyệt t
 7.  **Render layout**: Hiển thị giao diện hoàn chỉnh lên màn hình.
 
 Ý 2 Tab **Network** trong DevTools là nơi cung cấp thông tin chi tiết của tất cả các HTTP request diễn ra trong quá trình này.
-![Mô tả Tab Network](./screenshots/anhA1.png)
+![Mô tả Tab Network](./screenshots/anhA1.PNG)
 
 ---
 
@@ -50,3 +50,36 @@ Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 *   **Khả năng phản hồi kém**: Bố cục bảng rất cứng nhắc, gây khó khăn khi thiết kế giao diện linh hoạt (Responsive) bằng CSS.
 *   **Bảo trì kém**: Cấu trúc bảng lồng nhau làm mã nguồn cồng kềnh, dễ vỡ bố cục khi thay đổi số lượng cột và làm chậm tốc độ tải trang.
 *   **SEO & Accessibility kém**: Screen reader đọc bảng theo thứ tự hàng-cột khiến nội dung bị đọc sai logic nếu dùng để dàn trang.
+
+## PHẦN B: THỰC HÀNH VÀ DEBUG
+
+### Bài B3: Phân tích và Sửa lỗi HTML
+
+
+
+#### Các lỗi trong sourcecode
+
+*   **Lỗi 1 (Dòng 1):** Khai báo `<!DOCTYPE>` thiếu `html`.
+    *   **Sửa:** `<!DOCTYPE html>`
+*   **Lỗi 2 (Dòng 2):** Thẻ `<html>` thiếu thuộc tính ngôn ngữ `lang`.
+    *   **Sửa:** `<html lang="vi">`
+*   **Lỗi 3 (Dòng 4):** Thẻ `<title>` mở nhưng không có thẻ đóng.
+    *   **Sửa:** Bổ sung thẻ đóng `</title>`
+*   **Lỗi 4 (Dòng 5):** Thẻ `<charset = "utf8">` sai cú pháp và thiếu thẻ meta.
+    *   **Sửa:** `<meta charset="UTF-8">`
+*   **Lỗi 5 (Dòng 8):** Thẻ `<h1>` đóng sai cú pháp (thiếu dấu `/`).
+    *   **Sửa:** Sửa thành `</h1>`
+*   **Lỗi 6 (Dòng 11):** Thuộc tính `href` thiếu dấu `/` và viết sai cấu trúc thẻ.
+    *   **Sửa:** `<a href="/home">`
+*   **Lỗi 7 (Dòng 11):** Thẻ `<a>` sử dụng thẻ đóng sai.
+    *   **Sửa:** Sửa thành `</a>`
+*   **Lỗi 8 (Dòng 20):** Thẻ `<img>` thiếu dấu nháy cho `src` và thiếu thuộc tính `alt`.
+    *   **Sửa:** `<img src="iphone.jpg" alt="iPhone 15 Pro Max">`
+*   **Lỗi 9 (Dòng 22):** Các thẻ `<p>` và `<b>` lồng nhau sai thứ tự đóng.
+    *   **Sửa:** `<p>Giá: <b>25.990.000đ</b></p>`
+*   **Lỗi 10 (Dòng 27):** Thẻ `<table>` thiếu phần đầu bảng `<thead>` và các ô tiêu đề `<th>`.
+    *   **Sửa:** Bổ sung `<thead>` và đổi các thẻ `<td>` ở hàng đầu thành `<th>`.
+*   **Lỗi 11 (Dòng 40):** Xuất hiện thẻ `<main>` thứ hai (HTML chỉ cho phép một thẻ main hiển thị).
+    *   **Sửa:** Đổi thẻ này thành `<aside>` để chứa nội dung bổ trợ.
+*   **Lỗi 12 (Dòng 45):** Thẻ đoạn văn `<p>` chưa được đóng.
+    *   **Sửa:** Bổ sung thẻ đóng `</p>`
