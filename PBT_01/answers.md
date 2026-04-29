@@ -1,76 +1,47 @@
-PHẦN A — KIỂM TRA ĐỌC HIỂU
-Câu A1 — HTTP & Browser
-Tài liệu tham chiếu: tuan_1_html5/01_introduction_html_universe.md
+## PHẦN A: KIẾN THỨC CƠ BẢN VỀ TRÌNH DUYỆT VÀ HTML5
 
-Thứ tự các bước xảy ra khi gõ [https://shopee.vn](https://shopee.vn):
+### Câu A1: Quy trình tải trang web và Tab Network
+Khi truy cập một trang web (ví dụ: `https://shopee.vn`), trình duyệt thực hiện theo thứ tự 7 bước sau:
+1.  **DNS lookup**: Tìm địa chỉ IP của tên miền.
+2.  **TCP handshake**: Thiết lập kết nối giữa máy tính và server.
+3.  **TLS handshake**: Thiết lập kết nối bảo mật.
+4.  **HTTP request**: Trình duyệt gửi yêu cầu dữ liệu đi.
+5.  **Server trả Response**: Máy chủ phản hồi và gửi dữ liệu về.
+6.  **Parse HTML -> DOM/CSSOM**: Trình duyệt phân tích cấu trúc HTML và CSS.
+7.  **Render layout**: Hiển thị giao diện hoàn chỉnh lên màn hình.
 
-Bước 1: DNS lookup — Tìm địa chỉ IP của tên miền.
+**Lưu ý:** Tab **Network** trong DevTools là nơi cung cấp thông tin chi tiết của tất cả các HTTP request diễn ra trong quá trình này.
 
-Bước 2: TCP handshake — Thiết lập kết nối giữa máy khách và máy chủ.
+---
 
-Bước 3: TLS handshake — Thiết lập kết nối bảo mật.
+### Câu A2: Tối ưu SEO bằng Semantic HTML
+Việc không sử dụng thẻ Semantic khiến Google đánh giá SEO thấp vì bot khó hiểu được cấu trúc trang. Dưới đây là 4 lỗi phổ biến và cách sửa:
 
-Bước 4: HTTP request — Trình duyệt gửi yêu cầu dữ liệu.
+| Lỗi sai (Sử dụng thẻ Div) | Fix lỗi (Sử dụng thẻ Semantic) | Ý nghĩa việc sửa đổi |
+| :--- | :--- | :--- |
+| `<div class="header">` | `<header>` | Giúp Google nhận diện đây là phần đầu trang. |
+| `<div class="logo">` | `<h1>` | Cung cấp heading chính, xác định cấu trúc nội dung. |
+| `<div class="menu">` | `<nav><ul><li><a>` | Giúp Screen reader đọc được đây là phần điều hướng. |
+| `<div class="main">` | `<main>` | Xác định rõ ràng khu vực chứa nội dung chính của trang. |
 
-Bước 5: Server response — Máy chủ trả về dữ liệu (phản hồi).
+---
 
-Bước 6: Parse HTML — Trình duyệt phân tích mã HTML thành DOM/CSSOM.
+### Câu A3: Phân biệt Block Element và Inline Element
+Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 
-Bước 7: Render layout — Tính toán và vẽ giao diện lên màn hình.
+*   **`<div>` (Block element)**: Luôn bắt đầu trên một dòng mới và chiếm toàn bộ chiều rộng có sẵn. Các phần tử khác không thể nằm cùng dòng với nó.
+*   **`<span>` (Inline element)**: Chỉ chiếm đúng phần diện tích của nội dung text, nằm cạnh nhau trên cùng một dòng và không tạo ra ngắt dòng.
+*   **`<strong>` (Inline element)**: Có tính chất tương tự thẻ `<span>` nhưng định dạng kiểu chữ đậm (Bold) cho văn bản.
 
-Tab Network trong DevTools: Cho phép theo dõi thông tin của tất cả các HTTP request của trang web như trạng thái, dung lượng và thời gian tải file.
+---
 
-Câu A2 — Semantic HTML
-Tài liệu tham chiếu: tuan_1_html5/04_semantic_html.md
+### Câu A4: Cấu trúc Table và lý do không dùng Table để dàn trang (Layout)
+#### 1. Các thẻ thành phần trong Table
+*   **`<thead>`**: Chứa hàng tiêu đề cột, giúp xác định ý nghĩa từng cột.
+*   **`<tbody>`**: Chứa dữ liệu chính của bảng (có thể có nhiều thẻ `<tbody>`).
+*   **`<tfoot>`**: Dùng cho phần tổng kết, thống kê hoặc ghi chú cuối bảng.
 
-Trang web bị đánh giá SEO thấp do không sử dụng các thẻ Semantic, khiến công cụ tìm kiếm khó hiểu được cấu trúc nội dung.
-
-Các lỗi và cách sửa:
-
-Lỗi 1: <div class="header"> (Không nhận diện được đầu trang). -> Sửa: Dùng thẻ <header>.
-
-Lỗi 2: <div class="logo">ShopTLU</div> (Thiếu phân cấp nội dung). -> Sửa: Dùng thẻ <h1>ShopTLU</h1>.
-
-Lỗi 3: <div class="menu"> bọc các thẻ <div> chứa link (Không hỗ trợ Screen Reader). -> Sửa: Dùng thẻ <nav> lồng danh sách <ul>, <li> và thẻ <a>.
-
-Lỗi 4: <div class="main"> (Không xác định được nội dung chính). -> Sửa: Dùng thẻ <main>.
-
-Câu A3 — Block vs Inline
-Tài liệu tham chiếu:
-
-Mô tả kết quả hiển thị:
-
-Hộp 1: Chiếm trọn một dòng (Block element).
-
-Text A, Text B: Nằm cạnh nhau trên cùng một dòng (Inline elements).
-
-Hộp 2: Tự động nhảy xuống dòng mới (Block element).
-
-Text C, Text D: Nằm cạnh nhau trên cùng một dòng, "Text D" hiển thị in đậm (Inline elements).
-
-Hộp 3: Tự động nhảy xuống dòng mới (Block element).
-
-Giải thích:
-
-Thẻ <div>: Là phần tử khối (block), luôn bắt đầu trên dòng mới và chiếm toàn bộ chiều rộng có sẵn.
-
-Thẻ <span> và <strong>: Là phần tử nội dòng (inline), chỉ chiếm diện tích vừa đủ nội dung và không tạo ra ngắt dòng.
-
-Câu A4 — Table
-Tài liệu tham chiếu: tuan_1_html5/05_tables_hyperlinks.md
-
-Ý nghĩa các thẻ:
-
-<thead>: Phần đầu bảng, chứa hàng tiêu đề cột.
-
-<tbody>: Phần thân bảng, chứa dữ liệu chính của bảng.
-
-<tfoot>: Phần cuối bảng, dùng để tổng kết hoặc ghi chú.
-
-Tại sao không nên dùng Table để tạo layout:
-
-Khả năng phản hồi kém: Bố cục bảng cứng nhắc, khó hiển thị linh hoạt trên các thiết bị khác nhau khi dùng CSS.
-
-Khó bảo trì: Cấu trúc bảng lồng nhau làm mã nguồn cồng kềnh, dễ lỗi khi thêm bớt nội dung.
-
-SEO & Accessibility kém: Các trình đọc màn hình sẽ đọc dữ liệu theo thứ tự hàng/cột, làm sai lệch logic nội dung của trang web.
+#### 2. Tại sao không dùng Table để tạo Layout trang web?
+*   **Khả năng phản hồi kém**: Bố cục bảng rất cứng nhắc, gây khó khăn khi thiết kế giao diện linh hoạt (Responsive) bằng CSS.
+*   **Bảo trì kém**: Cấu trúc bảng lồng nhau làm mã nguồn cồng kềnh, dễ vỡ bố cục khi thay đổi số lượng cột và làm chậm tốc độ tải trang.
+*   **SEO & Accessibility kém**: Screen reader đọc bảng theo thứ tự hàng-cột khiến nội dung bị đọc sai logic nếu dùng để dàn trang.
