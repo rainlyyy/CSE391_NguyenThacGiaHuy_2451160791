@@ -27,10 +27,15 @@
 | **4 (Pattern)** | Báo lỗi không khớp định dạng yêu cầu vì `abc123` chứa chữ, trái với pattern chỉ cho phép 10 chữ số. |
 | **5 (Minlength)** | Báo lỗi độ dài tối thiểu vì "123" chỉ có 3 ký tự, trong khi `minlength="8"`. |
 
+Lỗi 1
 ![alt text](./screenshots/anh1.png)
+Lỗi 2
 ![alt text](./screenshots/anh2.png)
+Lỗi 3
 ![alt text](./screenshots/anh3.png)
+Lỗi 4
 ![alt text](./screenshots/anh4.png)
+Lỗi 5
 ![alt text](./screenshots/anh5.png)
 
 
