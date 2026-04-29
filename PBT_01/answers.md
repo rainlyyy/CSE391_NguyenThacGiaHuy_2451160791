@@ -56,30 +56,69 @@ Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 ### Bài B3: Phân tích và Sửa lỗi HTML
 
 
-
 #### Các lỗi trong sourcecode
 
-*   **Lỗi 1 (Dòng 1):** Khai báo `<!DOCTYPE>` thiếu `html`.
-    *   **Sửa:** `<!DOCTYPE html>`
-*   **Lỗi 2 (Dòng 2):** Thẻ `<html>` thiếu thuộc tính ngôn ngữ `lang`.
-    *   **Sửa:** `<html lang="vi">`
-*   **Lỗi 3 (Dòng 4):** Thẻ `<title>` mở nhưng không có thẻ đóng.
-    *   **Sửa:** Bổ sung thẻ đóng `</title>`
-*   **Lỗi 4 (Dòng 5):** Thẻ `<charset = "utf8">` sai cú pháp và thiếu thẻ meta.
-    *   **Sửa:** `<meta charset="UTF-8">`
-*   **Lỗi 5 (Dòng 8):** Thẻ `<h1>` đóng sai cú pháp (thiếu dấu `/`).
-    *   **Sửa:** Sửa thành `</h1>`
-*   **Lỗi 6 (Dòng 11):** Thuộc tính `href` thiếu dấu `/` và viết sai cấu trúc thẻ.
-    *   **Sửa:** `<a href="/home">`
-*   **Lỗi 7 (Dòng 11):** Thẻ `<a>` sử dụng thẻ đóng sai.
-    *   **Sửa:** Sửa thành `</a>`
-*   **Lỗi 8 (Dòng 20):** Thẻ `<img>` thiếu dấu nháy cho `src` và thiếu thuộc tính `alt`.
-    *   **Sửa:** `<img src="iphone.jpg" alt="iPhone 15 Pro Max">`
-*   **Lỗi 9 (Dòng 22):** Các thẻ `<p>` và `<b>` lồng nhau sai thứ tự đóng.
-    *   **Sửa:** `<p>Giá: <b>25.990.000đ</b></p>`
-*   **Lỗi 10 (Dòng 27):** Thẻ `<table>` thiếu phần đầu bảng `<thead>` và các ô tiêu đề `<th>`.
-    *   **Sửa:** Bổ sung `<thead>` và đổi các thẻ `<td>` ở hàng đầu thành `<th>`.
-*   **Lỗi 11 (Dòng 40):** Xuất hiện thẻ `<main>` thứ hai (HTML chỉ cho phép một thẻ main hiển thị).
-    *   **Sửa:** Đổi thẻ này thành `<aside>` để chứa nội dung bổ trợ.
-*   **Lỗi 12 (Dòng 45):** Thẻ đoạn văn `<p>` chưa được đóng.
-    *   **Sửa:** Bổ sung thẻ đóng `</p>`
+*   **Lỗi 1:** Dòng 1 — Khai báo `<!DOCTYPE>` thiếu `html` — **Cách sửa:** `<!DOCTYPE html>`
+*   **Lỗi 2:** Dòng 2 — Thẻ `<html>` thiếu thuộc tính `lang` — **Cách sửa:** `<html lang="vi">`
+*   **Lỗi 3:** Dòng 4 — Thẻ `<title>` mở nhưng không có thẻ đóng — **Cách sửa:** Bổ sung thẻ đóng `</title>`
+*   **Lỗi 4:** Dòng 5 — Sai cú pháp thẻ meta charset — **Cách sửa:** `<meta charset="UTF-8">`
+*   **Lỗi 5:** Dòng 8 — Thẻ `<h1>` sử dụng thẻ đóng sai cú pháp — **Cách sửa:** Sửa thành `</h1>`
+*   **Lỗi 6:** Dòng 11 — Thuộc tính `href` thiếu dấu `/` và sai cấu trúc — **Cách sửa:** `<a href="/home">`
+*   **Lỗi 7:** Dòng 11 — Thẻ `<a>` sử dụng thẻ đóng sai — **Cách sửa:** Sửa thành `</a>`
+*   **Lỗi 8:** Dòng 20 — Thẻ `<img>` thiếu dấu nháy cho `src` và thiếu `alt` — **Cách sửa:** `<img src="iphone.jpg" alt="iPhone 15 Pro Max">`
+*   **Lỗi 9:** Dòng 22 — Các thẻ `<p>` và `<b>` lồng nhau sai thứ tự đóng — **Cách sửa:** `<p>Giá: <b>25.990.000đ</b></p>`
+*   **Lỗi 10:** Dòng 27 — Thẻ `<table>` thiếu phần `<thead>` và tiêu đề `<th>` — **Cách sửa:** Bổ sung `<thead>` và dùng thẻ `<th>` cho hàng đầu.
+*   **Lỗi 11:** Dòng 40 — Xuất hiện thẻ `<main>` thứ hai trong một trang — **Cách sửa:** Đổi thành thẻ `<aside>`
+*   **Lỗi 12:** Dòng 45 — Thẻ đoạn văn `<p>` chưa được đóng — **Cách sửa:** Bổ sung thẻ đóng `</p>`
+
+
+
+
+## PHẦN C:
+```html
+
+<section>
+    <img src="1.jpg" alt="ảnh 1">
+    <img src="2.jpg" alt="ảnh 2">
+    <img src="3.jpg" alt="ảnh 3">
+    <img src="4.jpg" alt="ảnh 4">
+    <img src="5.jpg" alt="ảnh 5">
+</section>
+
+<section>
+    <h1>iPhone 16 Pro Max</h1>
+    <p>34.990.000đ</p>
+    <p>5/5 sao</p>
+    <article>
+        <h2>Mô tả</h2>
+        <p>Nội dung mô tả sản phẩm ở đây.</p>
+    </article>
+</section>
+
+<section>
+    <table>
+        <tr>
+            <td>Màn hình</td>
+            <td>6.7 inch</td>
+        </tr>
+        <tr>
+            <td>Chip</td>
+            <td>A18 Pro</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Đánh giá</h2>
+    <article>
+        <p><strong>Người dùng A:</strong> Máy dùng rất mượt.</p>
+    </article>
+</section>
+
+<aside>
+    <h3>Sản phẩm tương tự</h3>
+    <ul>
+        <li>iPhone 15 Pro Max</li>
+        <li>Samsung S24 Ultra</li>
+    </ul>
+</aside>
