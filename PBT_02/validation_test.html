@@ -2,56 +2,16 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiểm tra Validation HTML5</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
-        form { max-width: 500px; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
-        div { margin-bottom: 15px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; }
-        input { width: 100%; padding: 8px; box-sizing: border-box; }
-        button { background-color: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
-        button:hover { background-color: #0056b3; }
-        h2 { color: #333; }
-    </style>
+    <title>Test</title>
 </head>
 <body>
-
-    <h2>Test Validation Cases - Câu A2</h2>
-    
-    <form action="#">
-        <!-- Trường hợp 1: Để trống trường bắt buộc -->
-        <div>
-            <label>1. Trường hợp 'required' (đang để trống):</label>
-            <input type="text" required value="">
-        </div>
-
-        <!-- Trường hợp 2: Sai định dạng Email -->
-        <div>
-            <label>2. Trường hợp 'email' (giá trị là "abc"):</label>
-            <input type="email" value="abc">
-        </div>
-
-        <!-- Trường hợp 3: Vượt quá giá trị max -->
-        <div>
-            <label>3. Trường hợp 'number' (min=1, max=10, giá trị là 15):</label>
-            <input type="number" min="1" max="10" value="15">
-        </div>
-
-        <!-- Trường hợp 4: Sai Pattern (yêu cầu 10 chữ số) -->
-        <div>
-            <label>4. Trường hợp 'pattern' (yêu cầu 10 số, giá trị là "abc123"):</label>
-            <input type="text" pattern="[0-9]{10}" value="abc123">
-        </div>
-
-        <!-- Trường hợp 5: Không đủ độ dài tối thiểu -->
-        <div>
-            <label>5. Trường hợp 'minlength' (yêu cầu 8 ký tự, giá trị là "123"):</label>
-            <input type="password" minlength="8" value="123">
-        </div>
-
-        <button type="submit">Bấm Submit để xem lỗi</button>
+    <form>
+        <p>1. <input type="text" required></p>
+        <p>2. <input type="email" ></p>
+        <p>3. <input type="number" max="10"></p>
+        <p>4. <input type="text" pattern="[0-9]{10}" ></p>
+        <p>5. <input type="password" minlength="8" ></p>
+        <button type="submit">Check</button>
     </form>
-
 </body>
 </html>

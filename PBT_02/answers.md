@@ -27,6 +27,12 @@
 | **4 (Pattern)** | Báo lỗi không khớp định dạng yêu cầu vì `abc123` chứa chữ, trái với pattern chỉ cho phép 10 chữ số. |
 | **5 (Minlength)** | Báo lỗi độ dài tối thiểu vì "123" chỉ có 3 ký tự, trong khi `minlength="8"`. |
 
+![alt text](./screenshots/anh1.png)
+![alt text](./screenshots/anh2.png)
+![alt text](./screenshots/anh3.png)
+![alt text](./screenshots/anh4.png)
+![alt text](./screenshots/anh5.png)
+
 
 ### Câu A3: Accessibility trong Form
 > tài liệu tham chiếu: `07_forms_interactive.md`

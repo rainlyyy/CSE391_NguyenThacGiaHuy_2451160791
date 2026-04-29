@@ -81,11 +81,11 @@ Dựa trên cấu trúc hiển thị của các thẻ phổ biến:
 
 - 3 thẻ semantic HTML5 trang đang sử dụng:
   - Thẻ `<header>`: Bao quanh logo + thanh tìm kiếm
-    ![alt text](./screenshots/anhheader.png)
+    ![alt text](./screenshots/anhHeader.png)
   - Thẻ `<main>`: Bao toàn bộ nội dung chính trang
-    ![alt text](./screenshots/main.png)
+    ![alt text](./screenshots/anhmain.png)
   - Thẻ `<footer>`: Chân trang
-   ![alt text](./screenshots/footer.png)
+   ![alt text](./screenshots/anhfooter.png)
 
 
 
