@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán đơn hàng</title>
+</head>
+<body>
+    <h1>Thanh toán</h1>
+
+    <form action="#" method="POST">
+
+        <p>
+            <label for="search">Tìm sản phẩm mua thêm:</label>
+            <input list="products" id="search" name="search" placeholder="Gõ để tìm...">
+            <datalist id="products">
+                <option value="Bàn phím cơ Aula">
+                <option value="Chuột không dây">
+                <option value="Tai nghe in-ear">
+            </datalist>
+        </p>
+
+        <table border="1" cellpadding="5" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Bàn phím</td>
+                    <td>1.000.000đ</td>
+                    <td>1</td>
+                    <td>1.000.000đ</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chuột</td>
+                    <td>500.000đ</td>
+                    <td>1</td>
+                    <td>500.000đ</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tai nghe</td>
+                    <td>500.000đ</td>
+                    <td>1</td>
+                    <td>500.000đ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="right"><b>Tổng cộng:</b></td>
+
+                    <td><output name="total">2.000.000đ</output></td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <fieldset>
+            <legend>Phương thức thanh toán</legend>
+            <label><input type="radio" name="payment" value="cod" checked> COD</label>
+            <label><input type="radio" name="payment" value="bank"> Chuyển khoản</label>
+            <label><input type="radio" name="payment" value="wallet"> Ví điện tử</label>
+            
+            <p>
+                <label for="discount">Mã giảm giá:</label>
+
+                <input type="text" id="discount" name="discount" pattern="SALE[0-9]{4}" placeholder="SALE2026">
+            </p>
+            
+            <p>
+                <label for="note">Ghi chú (Tùy chọn):</label><br>
+                <textarea id="note" name="note" rows="3" cols="40"></textarea>
+            </p>
+            
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <p>
+                <label for="date">Ngày giao mong muốn:</label>
+                <input type="date" id="date" name="date" min="2026-05-01">
+            </p>
+            <p>
+                <label for="time">Khung giờ:</label>
+                <select id="time" name="time">
+                    <option value="morning">Sáng 8-12h</option>
+                    <option value="afternoon">Chiều 14-18h</option>
+                    <option value="evening">Tối 18-21h</option>
+                </select>
+            </p>
+            <p>
+                <label for="speed">Thời gian giao hàng (số ngày):</label>
+                <input type="range" id="speed" name="speed" min="1" max="7" step="1" value="3">
+            </p>
+        </fieldset>
+
+
+        <p>
+            Tiến trình đặt hàng: <progress value="80" max="100"></progress> 80% <br>
+            Điểm tích lũy thẻ thành viên: <meter min="0" max="1000" low="200" high="800" optimum="900" value="750"></meter> 750 điểm
+        </p>
+
+
+        <button type="submit" aria-label="Xác nhận đặt hàng">Đặt hàng</button>
+    </form>
+</body>
+</html>

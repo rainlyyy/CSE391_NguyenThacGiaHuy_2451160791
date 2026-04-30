@@ -3,20 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Đăng ký tài khoản - ShopTLU</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
-        form { max-width: 600px; margin: auto; }
-        fieldset { margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; }
-        legend { font-weight: bold; padding: 0 10px; }
-        div { margin-bottom: 10px; }
-        label { display: block; }
-        input[type="text"], input[type="email"], input[type="tel"], 
-        input[type="password"], input[type="date"], select, textarea {
-            width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;
-        }
-        .radio-group label { display: inline; margin-right: 15px; }
-    </style>
+
 </head>
+
 <body>
     <h1>Đăng ký tài khoản</h1>
     <form action="#" method="POST">
@@ -40,7 +29,8 @@
             <div>
                 <label for="dob">Ngày sinh:</label>
                 <!-- max="2026-04-30" vì hôm nay là 30/04/2026 -->
-                <input type="date" id="dob" name="dob" max="2026-04-30">
+                <input type="date" id="dob" name="dob"
+               required><br><br>
             </div>
         </fieldset>
 
@@ -104,5 +94,12 @@
         <button type="submit">Đăng ký</button>
         <button type="reset">Làm lại</button>
     </form>
+
+
+<script>
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("dob").max = today;
+</script>
+
 </body>
 </html>
