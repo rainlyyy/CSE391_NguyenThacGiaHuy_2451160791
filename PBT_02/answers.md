@@ -70,6 +70,13 @@ Lỗi 5
 
 ---
 
+## Phần B: Thực hành
+
+### Câu B1
+
+    HTML Constraint Validation API chỉ validate từng field độc lập — nó không có cơ chế so sánh giá trị của hai field với nhau. Đây là giới hạn cơ bản của đặc tả HTML.
+______________________________________________________________________
+
 ## PHẦN C: PHÂN TÍCH & SUY LUẬN
 
 ### Câu C1: Debug Form (8 lỗi)
@@ -101,3 +108,6 @@ Lỗi 5
 * **2 rủi ro nếu chỉ validate Frontend:**
     1. **Bị tấn công Injection:** Hacker gửi dữ liệu rác/mã độc trực tiếp lên Server thông qua công cụ như Postman.
     2. **Sai lệch dữ liệu:** Dữ liệu không hợp lệ chui vào database làm hỏng logic của toàn hệ thống.
+
+
+
