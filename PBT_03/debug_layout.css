@@ -1,0 +1,32 @@
+/* CÁCH SỬA 1: Dùng border-box (Khuyên dùng - Mở comment dòng dưới ra để xem tác dụng) */
+/* * { box-sizing: border-box; } */
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+/* CÁCH SỬA 2: Không dùng border-box, trừ thủ công bằng toán học.
+  Kích thước gốc: width 300px.
+  Kích thước mới = 300 - 40 (padding) - 2 (border) = 258px
+*/
+.sidebar {
+    width: 258px; /* Sửa ở đây để fix lỗi nếu không dùng border-box */
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background: coral;
+}
+
+/* Kích thước gốc: width 660px.
+  Kích thước mới = 660 - 60 (padding) - 2 (border) = 598px
+*/
+.content {
+    width: 598px; /* Sửa ở đây để fix lỗi nếu không dùng border-box */
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background: lightblue;
+}

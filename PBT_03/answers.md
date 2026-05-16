@@ -68,9 +68,19 @@
 6. **Pseudo-class Selector (Bộ chọn trạng thái):** `nav a:hover`, `tr:nth-child(even)`, `tr:hover` (chọn trạng thái tương tác hoặc thứ tự của phần tử).
 
 ### Bài B2 — Box Model Lab
+#### Phần 1
 - Hộp 1 (content-box): chiều rộng thực tế = 350px 
+./screenshots/contentbox.png
+
 - Hộp 2 (border-box): chiều rộng thực tế = 300px
+./screenshots/borderbox.png
+
 - Giải thích: `content-box` cộng dồn padding và border ra ngoài kích thước khai báo. `border-box` ép padding và border bóp ngược vào trong, giữ nguyên tổng kích thước khai báo.
+
+#### Phần 2
+./screenshots/layoutbroken.png
+./screenshots/layoutfixed.png
+
 
 ### Bài B3 — Specificity Battle
 1. `*` (0,0,0)
@@ -99,3 +109,5 @@
 2. "Mô tả sản phẩm" (trong featured): color = blue (do thẻ `p` có `color: inherit` sẽ kế thừa màu xanh từ cha là `.card`).
 3. "Sản phẩm B": font-size = 20px (từ `.card .title`), color = blue (kế thừa từ `.card`).
 4. "Mô tả sản phẩm B": color = green (bị `.highlight !important` đè).
+
+./screenshots/cascade.png
