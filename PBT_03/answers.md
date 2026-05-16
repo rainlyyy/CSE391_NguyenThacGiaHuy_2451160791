@@ -31,7 +31,7 @@
 7. `a[href="/"]` → Chọn: Home
 8. `.top-bar.dark h1` → Chọn: ShopTLU
 
-./screenshots/anh.png
+![Shop](screenshots/anh.png)
 
 ### Câu A3 — Box Model
 - **Trường hợp 1 (content-box):**
@@ -70,16 +70,16 @@
 ### Bài B2 — Box Model Lab
 #### Phần 1
 - Hộp 1 (content-box): chiều rộng thực tế = 350px 
-./screenshots/contentbox.png
+![Box 1 Content Box](screenshots/contentbox.png)
 
 - Hộp 2 (border-box): chiều rộng thực tế = 300px
-./screenshots/borderbox.png
+![Box 2 Border Box](screenshots/borderbox.png)
 
 - Giải thích: `content-box` cộng dồn padding và border ra ngoài kích thước khai báo. `border-box` ép padding và border bóp ngược vào trong, giữ nguyên tổng kích thước khai báo.
 
 #### Phần 2
-./screenshots/layoutbroken.png
-./screenshots/layoutfixed.png
+![Layout Broken](screenshots/layoutbroken.png)
+![Layout Fixed](screenshots/layoutfixed.png)
 
 
 ### Bài B3 — Specificity Battle
@@ -110,4 +110,4 @@
 3. "Sản phẩm B": font-size = 20px (từ `.card .title`), color = blue (kế thừa từ `.card`).
 4. "Mô tả sản phẩm B": color = green (bị `.highlight !important` đè).
 
-./screenshots/cascade.png
+![Cascade](screenshots/cascade.png)
