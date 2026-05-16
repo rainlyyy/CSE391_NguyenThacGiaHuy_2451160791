@@ -1,6 +1,8 @@
 # PHẦN A — KIỂM TRA ĐỌC HIỂU
 
 ### Câu A1 — 3 Cách nhúng CSS
+>Tài liệu tham chiếu: 08_introduction_css.md
+
 1. **Inline CSS (Trực tiếp)**
    - Ví dụ: `<h1 style="color: red;">Title</h1>`
    - Ưu điểm: Áp dụng nhanh, độ ưu tiên cao nhất.
@@ -29,6 +31,8 @@
 7. `a[href="/"]` → Chọn: Home
 8. `.top-bar.dark h1` → Chọn: ShopTLU
 
+./screenshots/anh.png
+
 ### Câu A3 — Box Model
 - **Trường hợp 1 (content-box):**
   - Chiều rộng hiển thị = 400 (width) + 40 (padding) + 10 (border) = 450px
@@ -54,6 +58,15 @@
 ---
 
 # PHẦN B — TRẢ LỜI CODE (Ghi chú)
+
+### Bài B1 — Các loại Selector đã sử dụng
+1. **Universal Selector (Bộ chọn toàn cục):** `*` (áp dụng box-sizing cho mọi phần tử).
+2. **Element Selector (Bộ chọn thẻ):** `body`, `header`, `table`, `th` (áp dụng style trực tiếp lên thẻ HTML).
+3. **Class Selector (Bộ chọn lớp):** `.wrapper`, `.active` (chọn các phần tử có chung class).
+4. **ID Selector (Bộ chọn ID):** `#contact a` (chọn thẻ a nằm trong phần tử có id là contact).
+5. **Descendant Selector (Bộ chọn hậu duệ):** `nav a`, `header h1` (chọn phần tử con nằm trong phần tử cha).
+6. **Pseudo-class Selector (Bộ chọn trạng thái):** `nav a:hover`, `tr:nth-child(even)`, `tr:hover` (chọn trạng thái tương tác hoặc thứ tự của phần tử).
+
 ### Bài B2 — Box Model Lab
 - Hộp 1 (content-box): chiều rộng thực tế = 350px 
 - Hộp 2 (border-box): chiều rộng thực tế = 300px

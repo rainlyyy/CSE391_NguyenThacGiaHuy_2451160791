@@ -1,0 +1,12 @@
+
+* { color: black; }                             /* Điểm: 0,0,0 */
+p { color: gray; }                              /* Điểm: 0,0,1 */
+.text { color: yellow; }                        /* Điểm: 0,1,0 */
+.highlight { color: orange; }                   /* Điểm: 0,1,0 */
+p.text { color: pink; }                         /* Điểm: 0,1,1 */
+.text.highlight { color: purple; }              /* Điểm: 0,2,0 */
+p.text.highlight { color: cyan; }               /* Điểm: 0,2,1 */
+#demo { color: blue; }                          /* Điểm: 1,0,0 */
+p#demo { color: brown; }                        /* Điểm: 1,0,1 */
+#demo.text.highlight { color: green; }          /* Điểm: 1,2,0 */
+p#demo.text.highlight { color: red; }           /* Điểm: 1,2,1 -> Win! Chữ sẽ có màu Đỏ */
