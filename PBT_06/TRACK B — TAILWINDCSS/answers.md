@@ -56,3 +56,19 @@ Lấy ví dụ tạo 1 nút bấm (Button):
 3. **Khi nào KHÔNG nên dùng TailwindCSS?**
    - Khi dự án yêu cầu viết code bằng các nền tảng cũ, không hỗ trợ thiết lập Node.js/PostCSS để chạy build Tailwind.
    - Khi làm nội dung blog/CMS (WYSIWYG editor) nơi người dùng tự soạn thảo văn bản, lúc này thẻ HTML sinh ra tự động không thể nhét class Tailwind vào được (tuy nhiên Tailwind có plugin Typography để trị vụ này).
+
+- Mobile
+
+![mobile](../screenshots/mobile2.png)
+
+- Desktop
+
+![desktop](../screenshots/desktop2.png)
+
+- Tablet
+
+![tablet](../screenshots/tablet2.png)
+
+- Dark Mode
+
+![Dark Mode](../screenshots/dark.png)

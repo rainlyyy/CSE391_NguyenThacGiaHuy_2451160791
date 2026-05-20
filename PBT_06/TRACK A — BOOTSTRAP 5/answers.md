@@ -44,3 +44,15 @@ Bảng phân tích Layout:
 - **Khả năng tùy biến:** CSS thuần dễ tạo ra giao diện độc bản 100%. Bootstrap khó tùy biến sâu nếu không rành SCSS, dễ làm web trông "công nghiệp" giống hệt các web xài Bootstrap khác.
 - **Khi nào NÊN dùng:** Làm các hệ thống Dashboard Admin, web nội bộ, Landing page cần tốc độ lên thớt cực nhanh, dự án thiếu UI Designer.
 - **Khi nào KHÔNG NÊN dùng:** Các website mang đậm tính nghệ thuật sáng tạo (như Portfolio cá nhân cao cấp), các website yêu cầu file CSS cực kỳ nhẹ và tối ưu (vì file CSS Bootstrap khá nặng).
+
+- Mobile
+
+![mobile](../screenshots/mobile1.png)
+
+- Desktop
+
+![desktop](../screenshots/desktop1.png)
+
+- Tablet
+
+![tablet](../screenshots/tablet1.png)
