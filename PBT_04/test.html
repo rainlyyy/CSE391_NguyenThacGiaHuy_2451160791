@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa lỗi 3</title>
+    <style>
+        /* CSS Lỗi */
+        body { margin: 0; }
+        .layout { display: flex; }
+        .sidebar { width: 250px; }
+        .content { flex: 1; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <h3>Sidebar (250px)</h3>
+            <ul><li>Item 1</li><li>Item 2</li></ul>
+        </div>
+        <div class="content">
+            <h1>Main Content</h1>
+            <p style="width: 1000px; background: #ddd; padding: 10px;">
+                Một đoạn text rất dài được set width cố định để cố tình ép không gian của layout. Nhờ có <code>flex-shrink: 0</code> ở sidebar, sidebar vẫn giữ nguyên 250px mà không bị méo.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

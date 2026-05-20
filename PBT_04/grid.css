@@ -1,0 +1,33 @@
+.layout-container {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 200px; /* Responsive tốt hơn 1fr thường */
+    grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "sidebar main ads"
+        "footer footer footer";
+    gap: 20px; padding: 20px;
+}
+
+.header { grid-area: header; background: #333; color: white; padding: 20px; text-align: center; }
+.footer { grid-area: footer; background: #333; color: white; padding: 20px; text-align: center; }
+.sidebar { grid-area: sidebar; background: #f4f4f4; padding: 15px; }
+.ads { grid-area: ads; background: #eee; padding: 10px; text-align: center; }
+
+/* Nâng cao (Bonus): Hero banner nổi bật */
+.hero-banner { 
+    grid-area: hero; background: #007bff; color: white; 
+    height: 200px; display: grid; align-items: center; padding: 20px;
+}
+
+/* Grid con cho Main content */
+.main-content {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.main-content .card {
+    background: #fff; border: 1px solid #ccc; padding: 40px 20px; 
+    text-align: center; border-radius: 8px;
+}
