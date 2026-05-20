@@ -1,0 +1,23 @@
+// 1. Mixin căn giữa + flex
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// 2. Mixin tạo kiểu cho khung Card
+@mixin card-style {
+    border: 1px solid #ddd;
+    padding: $spacing-md;
+    text-align: center;
+    border-radius: 8px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+// 3. Mixin xử lý Responsive (Media Queries)
+@mixin respond-to($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}

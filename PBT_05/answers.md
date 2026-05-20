@@ -47,8 +47,8 @@
 
 # PHẦN C — PHÂN TÍCH RESPONSIVE TRANG WEB THỰC TẾ
 
-### Câu C1 — Phân tích trang web Shopee.vn (Gợi ý để bạn tự chụp ảnh)
-*BẠN NHỚ TỰ CHỤP 3 ẢNH (MOBILE, TABLET, DESKTOP) BỎ VÀO THƯ MỤC `screenshots/` NHÉ!*
+### Câu C1 — Phân tích trang web Shopee.vn 
+
 1. **Navigation thay đổi:**
    - Desktop: Có thanh tìm kiếm to, menu ngang đầy đủ link.
    - Mobile/Tablet: Bị rút gọn thành icon kính lúp, thêm icon Hamburger (☰) hoặc thanh Bottom Navigation.
@@ -58,6 +58,18 @@
    - Mobile (375px): 2 cột (hoặc kéo vuốt ngang).
 3. **Elements bị ẩn:** Các banner quảng cáo phụ 2 bên, menu danh mục con dài dòng thường bị ẩn trên mobile để tiết kiệm diện tích.
 4. **Font size:** Trên mobile font thường to hơn một chút hoặc giữ nguyên, khoảng cách (padding/margin) bị ép nhỏ lại.
+- Mobile
+
+![mobile](screenshots/mobile.png)
+
+- Desktop
+
+![desktop](screenshots/desktop.png)
+
+- Tablet
+
+![tablet](screenshots/tablet.png)
+
 
 ### Câu C2 — Thiết kế Strategy Đặt bàn nhà hàng
 - **Mobile (< 768px):** Layout 1 cột. Menu bị giấu vào nút Hamburger. Hero image chiếm 50vh. Form đặt bàn nằm dọc (các thẻ input nằm chồng lên nhau). Grid ảnh món ăn: 1 cột. Bản đồ nằm dưới cùng.

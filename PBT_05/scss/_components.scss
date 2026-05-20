@@ -1,0 +1,71 @@
+// Block Header có chứa nesting
+.header {
+    @include flex-between;
+    background: $secondary-color;
+    color: white;
+    padding: $spacing-md $spacing-lg;
+
+    .logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        font-size: 24px;
+        cursor: pointer;
+        display: block;
+
+        @include respond-to($breakpoint-tablet) {
+            display: none; // Ẩn hamburger trên tablet
+        }
+    }
+
+    .nav-menu {
+        display: none; // Mặc định ẩn trên mobile
+
+        @include respond-to($breakpoint-tablet) {
+            display: flex;
+            gap: $spacing-lg;
+        }
+
+        // Thẻ a lồng bên trong .nav-menu
+        a {
+            color: white;
+            text-decoration: none;
+            
+            // Dùng dấu & thay cho thẻ cha
+            &:hover {
+                color: $primary-color;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Block Card chứa nesting ảnh, chữ và trạng thái hover
+.card {
+    @include card-style;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: $spacing-sm;
+    }
+
+    h3 {
+        color: $secondary-color;
+        margin-bottom: $spacing-sm;
+    }
+
+    p {
+        color: $primary-color;
+        font-weight: bold;
+    }
+
+    // Hover effect
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+}

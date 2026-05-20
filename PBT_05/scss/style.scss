@@ -1,0 +1,78 @@
+// Import các partial files
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+// Reset cơ bản
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-primary;
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+// Layout chính
+.main-layout {
+    padding: $spacing-md;
+
+    @include respond-to($breakpoint-desktop) {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px; // Sidebar | Grid | Ads
+        gap: $spacing-lg;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+// Sidebar và Ads Bar
+.sidebar, .ads-bar {
+    display: none; // Ẩn trên mobile
+    background: #e9ecef;
+    padding: $spacing-md;
+    border-radius: 8px;
+
+    @include respond-to($breakpoint-tablet) {
+        display: block; // Hiện trên tablet
+        margin-bottom: $spacing-lg;
+    }
+
+    @include respond-to($breakpoint-desktop) {
+        margin-bottom: 0;
+    }
+}
+
+.ads-bar {
+    @include respond-to($breakpoint-desktop) {
+        background: #ff7675; // Đổi màu Ads bar trên desktop
+        color: white;
+    }
+}
+
+// Lưới sản phẩm (Mobile-First)
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile: 1 cột
+    gap: $spacing-md;
+
+    @include respond-to($breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr); // Tablet: 2 cột
+    }
+
+    @include respond-to($breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr); // Desktop: 4 cột
+    }
+}
+
+// Footer
+.footer {
+    background: $text-color;
+    color: white;
+    text-align: center;
+    padding: $spacing-lg;
+    margin-top: $spacing-lg;
+}

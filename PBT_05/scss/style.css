@@ -1,1 +1,140 @@
-/*# sourceMappingURL=style.css.map */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+}
+.header .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.header .hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+}
+@media (min-width: 768px) {
+  .header .hamburger {
+    display: none;
+  }
+}
+.header .nav-menu {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+}
+.header .nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+.header .nav-menu a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+.card p {
+  color: #3498db;
+  font-weight: bold;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333333;
+}
+
+.main-layout {
+  padding: 15px;
+}
+@media (min-width: 1024px) {
+  .main-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.sidebar, .ads-bar {
+  display: none;
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .sidebar, .ads-bar {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .sidebar, .ads-bar {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ads-bar {
+    background: #ff7675;
+    color: white;
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer {
+  background: #333333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */
