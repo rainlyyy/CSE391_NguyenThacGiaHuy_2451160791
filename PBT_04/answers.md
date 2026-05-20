@@ -79,9 +79,11 @@
 }
 ```
 - Lỗi
+
 ![Lỗi](screenshots/Loi1.png)
 
 - Sau khi sửa
+
 ![Sửa](screenshots/Sua1.png)
 
 #### ❌ Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
@@ -103,9 +105,11 @@
 ```
 
 - Lỗi
+
 ![Lỗi](screenshots/Loi2.png)
 
 - Sau khi sửa
+
 ![Sửa](screenshots/Sua2.png)
 
 #### ❌ Lỗi 3: Sidebar bị co lại khi content quá dài
@@ -126,7 +130,9 @@
 }
 ```
 - Lỗi
+
 ![Lỗi](screenshots/Loi3.png)
 
 - Sau khi sửa
+
 ![Sửa](screenshots/Sua3.png)

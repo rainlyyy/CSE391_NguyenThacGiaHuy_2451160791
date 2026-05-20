@@ -1,0 +1,61 @@
+body { font-family: sans-serif; padding: 50px; display: flex; justify-content: center; background: #f4f4f4;}
+.container { width: 350px; }
+
+/* 1. Card hover effect */
+.card {
+    background: white; padding: 20px; border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; /* Transition mượt */
+    margin-bottom: 30px;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* 2. Button hover effect */
+.btn {
+    padding: 10px 20px; border: none; border-radius: 4px;
+    background-color: #3498db; color: white; cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05); /* Phóng to nút 5% */
+}
+
+/* 3. Image zoom hover */
+.img-container {
+    overflow: hidden; /* Cắt phần ảnh bị zoom lòi ra ngoài */
+    border-radius: 4px; margin-bottom: 15px;
+}
+.img-container img {
+    width: 100%; display: block;
+    transition: transform 0.4s ease;
+}
+.img-container:hover img {
+    transform: scale(1.1); /* Phóng to ảnh 10% */
+}
+
+/* 4. Loading Spinner (Animation) */
+.spinner {
+    width: 50px; height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Gọi animation spin */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 5. Fade-in scroll (Animation) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}

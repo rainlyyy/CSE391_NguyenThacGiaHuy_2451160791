@@ -1,0 +1,60 @@
+/* TỔNG QUAN & MOBILE DEFAULT (< 768px) */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.header {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #2c3e50; color: white; padding: 15px 20px;
+}
+.nav-menu { display: none; } /* Ẩn menu ngang trên mobile */
+.hamburger { font-size: 24px; cursor: pointer; display: block; }
+
+.main-layout { padding: 15px; }
+
+/* Mobile ẩn sidebar và ads */
+.sidebar, .ads-bar { display: none; }
+
+/* Grid Sản phẩm - Mobile 1 cột */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+.card { border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px;}
+
+.footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 20px;}
+
+/* =========================================
+   TABLET (≥ 768px)
+   ========================================= */
+@media (min-width: 768px) {
+    .hamburger { display: none; } /* Ẩn hamburger */
+    .nav-menu { display: flex; gap: 20px; }
+    .nav-menu a { color: white; text-decoration: none; }
+
+    /* Layout chính */
+    .sidebar { display: block; margin-bottom: 20px; background: #eee; padding: 15px;}
+    
+    /* Grid Sản phẩm - Tablet 2 cột */
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================================
+   DESKTOP (≥ 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px; /* Sidebar | Grid | Ads */
+        gap: 20px;
+        max-width: 1200px; margin: 0 auto;
+    }
+    
+    .sidebar { margin-bottom: 0; }
+    .ads-bar { display: block; background: #ff7675; padding: 15px; color: white;}
+    
+    /* Grid Sản phẩm - Desktop 4 cột */
+    .product-grid { grid-template-columns: repeat(4, 1fr); }
+}
