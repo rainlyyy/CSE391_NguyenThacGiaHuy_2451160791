@@ -72,24 +72,121 @@
 
 
 ### Câu C2 — Thiết kế Strategy Đặt bàn nhà hàng
-- **Mobile (< 768px):** Layout 1 cột. Menu bị giấu vào nút Hamburger. Hero image chiếm 50vh. Form đặt bàn nằm dọc (các thẻ input nằm chồng lên nhau). Grid ảnh món ăn: 1 cột. Bản đồ nằm dưới cùng.
-- **Tablet (≥ 768px):** Layout 2 cột. Grid ảnh món ăn chia 2 cột. Form đặt bàn bắt đầu chia lưới (VD: cột trái chọn ngày, cột phải chọn giờ).
-- **Desktop (≥ 1024px):** Header menu trải ngang. Grid ảnh món ăn: 3 cột. Ở phần đặt bàn, Form nằm bên trái (chiếm 60%), Bản đồ Google Map nằm ngay bên phải Form (chiếm 40%).
 
-**CSS Skeleton (Mobile-First):**
-```css
-/* Mặc định Mobile (1 cột) */
-.layout-dat-ban { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.grid-mon-an { display: grid; grid-template-columns: 1fr; gap: 15px; }
+**1. Sơ đồ bố cục (Wireframes):**
 
-/* Tablet */
-@media (min-width: 768px) {
-    .grid-mon-an { grid-template-columns: repeat(2, 1fr); }
-}
+**📱 Mobile (< 768px): Layout 1 cột**
+- Các phần tử phụ bị ẩn: Menu chi tiết (ẩn trong Hamburger ☰), Sidebar.
+- Form đặt bàn: Nằm dọc ngay dưới Hero image. Bản đồ nằm cuối trang.
 
-/* Desktop */
-@media (min-width: 1024px) {
-    .grid-mon-an { grid-template-columns: repeat(3, 1fr); }
-    .layout-dat-ban { grid-template-columns: 60% 40%; /* Form bên trái, Map bên phải */ }
-}
+```text
+
+┌──────────────────────────┐
+│ [Logo]                [☰]│ <- Header
+├──────────────────────────┤
+│                          │
+│       HERO IMAGE         │
+│                          │
+├──────────────────────────┤
+│ Form Đặt Bàn (Dọc)       │ <- Form nằm trên
+├──────────────────────────┤
+│ Grid Món ăn (1 cột)      │
+│ [Ảnh]                    │
+│ [Ảnh]                    │
+├──────────────────────────┤
+│ Bản đồ Google Maps       │ <- Map nằm dưới
+├──────────────────────────┤
+│ Footer                   │
+└──────────────────────────┘
+```
+
+**💻 Tablet (≥ 768px): Layout 2 cột cho Grid**
+- Grid ảnh: Chia 2 cột.
+- Bản đồ: Bắt đầu được đưa lên nằm song song với Form (nếu đủ chỗ) hoặc vẫn nằm dưới Form nhưng Form chia 2 cột.
+
+```text
+┌──────────────────────────┐
+│ [Logo]     [Hotline] [☰] │
+├──────────────────────────┤
+│       HERO IMAGE         │
+├──────────────────────────┤
+│ Form Đặt Bàn             │
+│ [Ngày] [Giờ] [Số người]  │
+├──────────────────────────┤
+│ Grid Món ăn (2 cột)      │
+│ [Ảnh 1]   │   [Ảnh 2]    │
+│ [Ảnh 3]   │   [Ảnh 4]    │
+├──────────────────────────┤
+│ Bản đồ Google Maps (Full)│
+├──────────────────────────┤
+│ Footer                   │
+└──────────────────────────┘
+```
+
+**🖥️ Desktop (≥ 1024px): Layout lớn, nhiều cột**
+- Grid ảnh: Chia 3 cột.
+- Không dùng Sidebar cho phần này để tập trung vào Form.
+- Form và Bản đồ: Nằm cạnh nhau trên cùng 1 hàng (Form 60%, Map 40%).
+
+```text
+┌──────────────────────────────────────────────────┐
+│ [Logo]          [Home] [Menu] [About]  [Hotline] │
+├──────────────────────────────────────────────────┤
+│                                                  │
+│                   HERO IMAGE                     │
+│                                                  │
+├──────────────────────────────────────────────────┤
+│ Grid Món ăn (3 cột)                              │
+│    [Ảnh 1]        [Ảnh 2]        [Ảnh 3]         │
+│    [Ảnh 4]        [Ảnh 5]        [Ảnh 6]         │
+├────────────────────────┬─────────────────────────┤
+│                        │                         │
+│   FORM ĐẶT BÀN         │    GOOGLE MAPS          │
+│   (Chiếm 60% chiều     │    (Chiếm 40% chiều     │
+│    rộng màn hình)      │     rộng màn hình)      │
+│                        │                         │
+├────────────────────────┴─────────────────────────┤
+│                      FOOTER                      │
+└──────────────────────────────────────────────────┘
 ``` 
+
+**2. Chi tiết phân tích:**
+- Mobile: Menu bị ẩn vào icon Hamburger. Ảnh thu về 1 cột. Các input trong Form xếp chồng lên nhau thành 1 cột dọc.
+- Tablet: Grid ảnh chuyển thành 2 cột. 
+- Desktop: Menu bung ra hàng ngang. Form đặt bàn nằm bên trái, Google Map nằm ngay bên phải Form. Layout Grid 3 cột.
+
+**3. CSS Skeleton (Grid + Mobile-First):**
+```css
+/* Layout chung - Mobile First (1 cột) */
+.restaurant-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 cột trên Mobile */
+    gap: 15px;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên Tablet */
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .food-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cột trên Desktop */
+    }
+    
+    /* Gom Form và Map lên cùng 1 hàng */
+    .booking-section {
+        display: grid;
+        grid-template-columns: 6fr 4fr; /* Form 60% | Map 40% */
+        gap: 30px;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 space-y-12 max-w-5xl mx-auto">
+
+    <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold mb-4 text-gray-800">1. Buttons</h2>
+        <div class="flex flex-wrap gap-4 items-center">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition">Primary</button>
+            <button class="bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-md transition">Secondary</button>
+            <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-md transition">Outline</button>
+            <button class="bg-blue-300 text-white font-medium py-2 px-4 rounded-md cursor-not-allowed" disabled>Disabled</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-1 px-3 text-sm rounded-md transition">Small</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 text-lg rounded-md transition">Large</button>
+            <button class="bg-indigo-600 text-white font-medium py-2 px-4 rounded-md flex items-center opacity-75 cursor-wait">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Processing...
+            </button>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <div class="h-32 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+            <div class="px-6 flex justify-center -mt-12">
+                <img class="h-24 w-24 rounded-full border-4 border-white object-cover" src="https://i.pinimg.com/736x/67/4c/dd/674cdde3b8f4352600e8b1cf987fb8e5.jpg" alt="Avatar">
+            </div>
+            <div class="text-center px-6 py-4">
+                <h3 class="text-xl font-bold text-gray-800">Nguyễn Thạc Gia Huy</h3>
+                <p class="text-gray-500 mt-1">Sinh viên CNTT</p>
+                <button class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 rounded-md transition">Follow</button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-500 hover:shadow-lg transition flex flex-col">
+            <h3 class="text-xl font-semibold text-gray-800 text-center uppercase tracking-wide">Pro Plan</h3>
+            <div class="text-center mt-4">
+                <span class="text-4xl font-extrabold">$29</span><span class="text-gray-500">/tháng</span>
+            </div>
+            <ul class="mt-6 space-y-4 flex-1">
+                <li class="flex items-center text-gray-600"><span class="text-green-500 mr-2">✓</span> 5 Projects</li>
+                <li class="flex items-center text-gray-600"><span class="text-green-500 mr-2">✓</span> 50GB Storage</li>
+                <li class="flex items-center text-gray-600"><span class="text-green-500 mr-2">✓</span> 24/7 Support</li>
+            </ul>
+            <button class="mt-6 w-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-bold py-2 rounded-md transition">Chọn gói này</button>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Forms</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="you@example.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Quốc gia</label>
+                    <select class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Việt Nam</option>
+                        <option>Nhật Bản</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label class="ml-2 block text-sm text-gray-900">Đồng ý điều khoản</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Alerts</h2>
+            <div class="space-y-4">
+                <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 flex justify-between rounded" role="alert">
+                    <p class="font-medium">Thành công! Dữ liệu đã lưu.</p>
+                    <button class="text-green-700 hover:text-green-900 font-bold">&times;</button>
+                </div>
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 flex justify-between rounded" role="alert">
+                    <p class="font-medium">Lỗi! Không thể kết nối server.</p>
+                    <button class="text-red-700 hover:text-red-900 font-bold">&times;</button>
+                </div>
+                <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded" role="alert">
+                    <p class="font-medium">Cảnh báo: Sắp hết hạn dùng thử.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
