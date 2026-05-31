@@ -65,3 +65,57 @@ var html = `
     <span>Giá: ${price}đ</span>
 </div>
 `;
+```
+
+## PHẦN C — SUY LUẬN
+
+### Câu C1 — Debug JavaScript
+
+**Các lỗi phát hiện và cách sửa:**
+
+1. **Lỗi phép gán trong lệnh if:** Dòng `if (giaSauGiam = 0)` đang thực hiện phép gán giá trị chứ không phải so sánh. Phép gán này trả về `0` (Falsy), nên khối lệnh bên trong không bao giờ được thực thi.
+   * *Cách sửa:* Đổi thành phép so sánh nghiêm ngặt `===` (nghĩa là `if (giaSauGiam === 0)`).
+2. **Lỗi ẩn (var trong vòng lặp bất đồng bộ):** Vòng lặp `for` sử dụng `var i = 0` kết hợp với `setTimeout`. Do `var` có phạm vi hàm (function scope) chứ không phải phạm vi khối (block scope), nên khi `setTimeout` thực thi sau 1 giây, vòng lặp đã chạy xong từ lâu và biến `i` toàn cục đã mang giá trị là 5. Do đó, console in ra "Item 5" tận 5 lần.
+   * *Cách sửa:* Đổi `var i` thành `let i` để tạo phạm vi khối (block scope) độc lập cho từng vòng lặp.
+3. **Lỗi không ép kiểu đầu vào (Type Coercion):** Hàm nhận chuỗi `"100000"`. Dù phép nhân và chia tự ép kiểu được thành số, nhưng để an toàn và tránh lỗi với phép cộng/trừ, ta luôn phải chủ động ép kiểu đầu vào.
+   * *Cách sửa:* Thêm lệnh ép kiểu `Number()` cho các tham số.
+4. **Lỗi thiếu làm tròn:** Tính toán phần trăm tiền tệ dễ sinh ra số lẻ thập phân, khiến giao diện hiển thị không đẹp.
+   * *Cách sửa:* Sử dụng `Math.round()` vào biến trả về.
+
+**Code đã sửa hoàn chỉnh:**
+
+```javascript
+function tinhGiaGiamGia(giaBan, phanTramGiam) {
+    // Ép kiểu an toàn
+    giaBan = Number(giaBan);
+    phanTramGiam = Number(phanTramGiam);
+
+    if (phanTramGiam < 0 || phanTramGiam > 100) {
+        return "Phần trăm giảm không hợp lệ";
+    }
+    
+    let giamGia = giaBan * phanTramGiam / 100;
+    let giaSauGiam = giaBan - giamGia;
+    
+    // Sửa lỗi gán thành so sánh tuyệt đối
+    if (giaSauGiam === 0) {
+        console.log("Sản phẩm miễn phí!");
+    }
+    
+    // Làm tròn số tiền
+    return Math.round(giaSauGiam);
+}
+
+// Test
+const gia = tinhGiaGiamGia("100000", 20);
+console.log("Giá sau giảm: " + gia + "đ");
+
+const gia2 = tinhGiaGiamGia(50000, 110);
+console.log("Giá: " + gia2);
+
+// Sửa lỗi ẩn bằng let
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i);
+    }, 1000);
+}
