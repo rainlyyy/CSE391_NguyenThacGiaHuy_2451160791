@@ -11,66 +11,89 @@ const products = [
     { id: 10, name: "ThinkPad X1", price: 32990000, category: "laptop", stock: 3, rating: 4.5 }
 ];
 
-// 1. Lọc sản phẩm còn hàng
-function getInStock(arr) {
-    return arr.filter(p => p.stock > 0);
+function getInStock(products) {
+    return products.filter(p => p.stock > 0);
 }
 
-// 2. Lọc theo category VÀ khoảng giá
-function filterProducts(arr, category, minPrice, maxPrice) {
-    return arr.filter(p => p.category === category && p.price >= minPrice && p.price <= maxPrice);
+function filterProducts(products, category, minPrice, maxPrice) {
+    return products.filter(
+        p =>
+            p.category === category &&
+            p.price >= minPrice &&
+            p.price <= maxPrice
+    );
 }
 
-// 3. Sắp xếp theo giá (tăng/giảm - spread để không mutate gốc)
-function sortByPrice(arr, order = "asc") {
-    return [...arr].sort((a, b) => order === "asc" ? a.price - b.price : b.price - a.price);
+function sortByPrice(products, order = "asc") {
+    return [...products].sort((a, b) =>
+        order === "asc"
+            ? a.price - b.price
+            : b.price - a.price
+    );
 }
 
-// 4. Tìm sản phẩm rẻ nhất mỗi category
-function cheapestByCategory(arr) {
-    return arr.reduce((acc, curr) => {
-        // Nếu category chưa có trong accumulator HOẶC giá hiện tại rẻ hơn giá đang lưu
-        if (!acc[curr.category] || curr.price < acc[curr.category].price) {
-            acc[curr.category] = curr;
+function cheapestByCategory(products) {
+    return products.reduce((result, product) => {
+        const category = product.category;
+
+        if (
+            !result[category] ||
+            product.price < result[category].price
+        ) {
+            result[category] = product;
         }
-        return acc;
+
+        return result;
     }, {});
 }
 
-// 5. Tính tổng giá trị kho (price × stock cho mỗi SP)
-function totalInventoryValue(arr) {
-    return arr.reduce((total, p) => total + (p.price * p.stock), 0);
+function totalInventoryValue(products) {
+    return products.reduce(
+        (sum, p) => sum + p.price * p.stock,
+        0
+    );
 }
 
-// 6. Tạo mảng chỉ chứa { name, formattedPrice }
-function formatProductList(arr) {
-    return arr.map(p => ({
+function formatProductList(products) {
+    return products.map(p => ({
         name: p.name,
-        formattedPrice: p.price.toLocaleString('vi-VN') + "đ"
+        formattedPrice:
+            p.price.toLocaleString("vi-VN") + "đ"
     }));
 }
 
-// 7. Tính rating trung bình toàn bộ
-function averageRating(arr) {
-    const totalRating = arr.reduce((sum, p) => sum + p.rating, 0);
-    return (totalRating / arr.length).toFixed(2); // Giữ 2 số thập phân
+function averageRating(products) {
+    return (
+        products.reduce((sum, p) => sum + p.rating, 0) /
+        products.length
+    );
 }
 
-// 8. Tìm sản phẩm theo keyword (không phân biệt hoa thường)
-function searchProducts(arr, keyword) {
-    const kw = keyword.toLowerCase();
-    return arr.filter(p => p.name.toLowerCase().includes(kw));
+function searchProducts(products, keyword) {
+    const key = keyword.toLowerCase();
+
+    return products.filter(p =>
+        p.name.toLowerCase().includes(key)
+    );
 }
 
-// === TEST KẾT QUẢ ===
 console.log("=== IN-STOCK PRODUCTS ===");
 console.log(getInStock(products));
 
 console.log("\n=== PHONES 15-25 TRIỆU ===");
-console.log(filterProducts(products, "phone", 15000000, 25000000));
+console.log(
+    filterProducts(
+        products,
+        "phone",
+        15000000,
+        25000000
+    )
+);
 
 console.log("\n=== CHEAPEST BY CATEGORY ===");
 console.log(cheapestByCategory(products));
 
 console.log("\n=== TOTAL INVENTORY VALUE ===");
-console.log(totalInventoryValue(products).toLocaleString('vi-VN') + "đ");
+console.log(
+    totalInventoryValue(products).toLocaleString() + "đ"
+);
